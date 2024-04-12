@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply w-[100%] border border-slate-200 px-4 py-1 outline-blue-200;
+  }
+
+  .label {
+    @apply block;
+  }
+
+  .form-group {
+    @apply my-3 flex flex-col;
+  }
+}
