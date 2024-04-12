@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function PlaceOrder() {
   const [contact, setContact] = useState("");
@@ -19,21 +20,24 @@ function PlaceOrder() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    checkout(
-      `${redirect_URL}/order?contact=${contact}&address=${address}&carts=${cart.map(
-        (ele) => ele._id
-      )}`,
-      `${redirect_URL}/login`
-    );
+    //########## PAYMENT GATEWAY IMPLEMENTATION
 
-    // const data = await createOrder({
-    //   address,
-    //   contact: +contact,
-    //   carts: cart.map((ele) => ele._id),
-    // });
+    // checkout(
+    //   `${redirect_URL}/order?contact=${contact}&address=${address}&carts=${cart.map(
+    //     (ele) => ele._id
+    //   )}`,
+    //   `${redirect_URL}/login`
+    // );
 
-    // console.log("Order Placed");
-    // navigate(`/order/${data._id}`);
+    //##########  WITHOUT PAYMENT GATEWAY IMPLEMENTATION
+    const data = await createOrder({
+      address,
+      contact: +contact,
+      carts: cart.map((ele) => ele._id),
+    });
+
+    toast.success("Order placed");
+    navigate(`/order/${data._id}`);
   };
 
   // const handleSubmit = (e) => {

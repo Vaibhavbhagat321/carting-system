@@ -4,8 +4,8 @@ import toast from "react-hot-toast";
 import { loadStripe } from "@stripe/stripe-js";
 
 function CartState({ children }) {
-  const URL = `https://vowelweb-task-api.vercel.app`;
-  const redirect_URL = `https://vowelweb-task.vercel.app`;
+  const URL = `https://carting-system-api.vercel.app`;
+  const redirect_URL = `https://carting-system-api.vercel.app`;
   // const redirect_URL = `http://localhost:5173`;
   // const URL = `http://localhost:8000`;
 
