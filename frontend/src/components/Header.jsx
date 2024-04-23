@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="flex justify-between  h-[10vh] items-center sticky left-0 top-0 bg-slate-200 border-b-[1px] border-slate-400 z-10">
       <Link to="/">
-        <h1 className="ml-2 text-2xl font-[700]">Cart System</h1>{" "}
+        <h1 className="ml-2 text-2xl font-[700]">E-Commerce</h1>{" "}
       </Link>
       <div>
         <ul className="list-none flex gap-6 mr-2">
