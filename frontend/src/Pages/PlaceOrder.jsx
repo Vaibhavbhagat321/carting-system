@@ -51,17 +51,12 @@ function PlaceOrder() {
   // };
 
   return (
-    <div className="flex w-full items-center justify-center">
-      <form
-        onSubmit={handleSubmit}
-        className="w-5/12 rounded-md border-2 bg-white px-10 py-5"
-      >
-        <h1 className="my-3 text-center text-3xl font-[500]">
-          Complete your order
-        </h1>
+    <div className="cart_container">
+      <form onSubmit={handleSubmit} className="place_order_box">
+        <h1 className="form_heading">Complete your order</h1>
 
         <div className="form-group">
-          <label htmlFor="contact" className="block">
+          <label htmlFor="contact" className="form_label">
             Contact :
           </label>
           <input
@@ -76,7 +71,7 @@ function PlaceOrder() {
         </div>
 
         <div className="form-group relative">
-          <label htmlFor="address" className="block">
+          <label htmlFor="address" className="form_label">
             Address :
           </label>
           <textarea
@@ -91,33 +86,27 @@ function PlaceOrder() {
         </div>
 
         <div>
-          <h1 className="text-xl font-medium">Products in Order:</h1>
+          <h1 className="place_order_subheading">Products in Order:</h1>
           <div className="">
             {cart.map((ele) => (
-              <div
-                key={ele._id}
-                className="flex flex-row gap-3 my-2 border-b-[1px] border-b-slate-200 px-3"
-              >
+              <div key={ele._id} className="place_order_prdlist">
                 <div>
-                  <h2 className="">Product: {ele.product.name}</h2>
+                  <h2 className="font-medium">Product: {ele.product.name}</h2>
                   <p>Price: {ele.product.price}/-</p>
                   <p>Quantity: {ele.quantity}</p>
                 </div>
               </div>
             ))}
           </div>
-          <h1>
+          <p className="place_order_prdlist">
             Total Price :<span className="font-bold"> {totalPrice}/-</span>
-          </h1>
+          </p>
         </div>
 
         <div></div>
 
         <div className="flex flex-col items-center justify-center gap-1 mt-8">
-          <button
-            type="submit"
-            className="bg-slate-800 active:translate-y-[1px] text-white px-2 py-1"
-          >
+          <button type="submit" className="btn">
             Proceed to payment
           </button>
         </div>

@@ -11,31 +11,32 @@ function ProductCard({ product, type = "col", setFormOpen }) {
   return (
     <div
       className={`${
-        type === "col"
-          ? "w-[20%] px-1 py-1 flex flex-col gap-3"
-          : "px-1 py-1 w-[80%] flex flex-row gap-2"
-      } border border-slate-300 rounded-md`}
+        type === "col" ? "product_card-user" : "product_card-admin"
+      } `}
     >
-      <div>
+      <div className="flex justify-center items-center">
         <img
           src={`/product.jpg`}
           alt={product.name}
-          className={`${type === "col" ? "w-full h-[40vh]" : "h-46 w-40"} `}
+          className={`${
+            type === "col" ? "product_image-user" : "product_image-admin"
+          } `}
         />
       </div>
       <div
         className={`${
-          type !== "col" && "flex flex-row justify-between  w-full gap-1"
+          type !== "col" &&
+          "flex flex-col sm:flex-row justify-between w-fit gap-1 pl-3"
         }`}
       >
-        <div className="w-[80%] flex flex-col gap-2 justify-between">
-          <h2 className={`text-xl font-bold capitalize`}>{product.name}</h2>
-          <p className={`w-full capitalize`}>{product.description}</p>
-          <h2 className="font-bold">{product.price}/-</h2>
+        <div className="w-[80%] flex flex-col gap sm:gap-1 lg:gap-2 justify-between">
+          <h2 className={`product_name`}>{product.name}</h2>
+          <p className={`product_desc`}>{product.description}</p>
+          <h2 className="product_price">{product.price}/-</h2>
         </div>
         <div
           className={`${
-            type !== "col" && "w-[20%]  flex justify-center items-center"
+            type !== "col" && "flex justify-center items-center w-fit"
           }`}
         >
           {type === "col" ? (
@@ -44,20 +45,20 @@ function ProductCard({ product, type = "col", setFormOpen }) {
                 if (!user) return navigate("/login");
                 addToCart(product._id);
               }}
-              className={`bg-slate-800 text-white active:translate-y-[1px] px-2 py-1 w-full h-10 font-medium my-2`}
+              className={`btn product_btn`}
             >
               Add to cart
             </button>
           ) : (
-            <div className="flex gap-2">
+            <div className="admin_operation_container">
               <button>
                 <HiPencil
                   onClick={() => setFormOpen(product._id)}
-                  className="border border-slate-300  text-xl"
+                  className="admin_operation_btn"
                 />
               </button>
               <button onClick={() => deleteProduct(product._id)}>
-                <HiTrash className="border border-slate-300  text-xl" />
+                <HiTrash className="admin_operation_btn" />
               </button>
             </div>
           )}

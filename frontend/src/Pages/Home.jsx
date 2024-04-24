@@ -17,7 +17,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex gap-x-8 gap-y-6 flex-wrap flex-row justify-around items-center">
+    <div className="product_container">
       {products.map((ele) => (
         <ProductCard product={ele} key={ele._id} />
       ))}

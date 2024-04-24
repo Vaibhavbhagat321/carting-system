@@ -21,14 +21,11 @@ function Register() {
 
   return (
     <>
-      <div className="flex h-[80vh] w-full items-center justify-center">
-        <form
-          onSubmit={submitHandler}
-          className="w-5/12 rounded-md border-2 bg-white px-10"
-        >
-          <h1 className="my-3 text-center text-3xl font-[500]">Register</h1>
+      <div className="login_form_container">
+        <form onSubmit={submitHandler} className="login_form">
+          <h1 className="form_heading">Register</h1>
           <div className="form-group">
-            <label htmlFor="email" className="block">
+            <label htmlFor="email" className="form_label">
               Email
             </label>
             <input
@@ -42,7 +39,7 @@ function Register() {
           </div>
 
           <div className="form-group relative">
-            <label htmlFor="pass" className="block">
+            <label htmlFor="pass" className="form_label">
               Password
             </label>
             <input
@@ -67,7 +64,7 @@ function Register() {
             )}
           </div>
           <div className="form-group">
-            <label htmlFor="cpass" className="block">
+            <label htmlFor="cpass" className="form_label">
               Confirm Password
             </label>
             <input
@@ -81,10 +78,7 @@ function Register() {
             />
           </div>
           <div className=" text-center">
-            <button
-              type="submit"
-              className="bg-slate-800 active:translate-y-[1px] px-2 py-1 text-white"
-            >
+            <button type="submit" className="btn">
               Register
             </button>
           </div>

@@ -19,15 +19,12 @@ function Login() {
   };
 
   return (
-    <div className="flex w-full items-center justify-center h-[80vh]">
-      <form
-        onSubmit={submitHandler}
-        className="w-5/12 rounded-md border-2 bg-white px-10"
-      >
-        <h1 className="my-3 text-center text-3xl font-[500]">Login</h1>
+    <div className="login_form_container">
+      <form onSubmit={submitHandler} className="login_form">
+        <h1 className="form_heading">Login</h1>
 
         <div className="form-group">
-          <label htmlFor="email" className="block">
+          <label htmlFor="email" className="form_label">
             Email
           </label>
           <input
@@ -42,7 +39,7 @@ function Login() {
         </div>
 
         <div className="form-group relative">
-          <label htmlFor="pass" className="block">
+          <label htmlFor="pass" className="form_label">
             Password
           </label>
           <input
@@ -68,10 +65,7 @@ function Login() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-1">
-          <button
-            type="submit"
-            className="bg-slate-800 active:translate-y-[1px] text-white px-2 py-1"
-          >
+          <button type="submit" className="btn">
             Login
           </button>
         </div>

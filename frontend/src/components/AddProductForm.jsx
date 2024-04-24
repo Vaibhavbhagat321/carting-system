@@ -44,14 +44,14 @@ function AddProductForm({ type = "new", closeForm }) {
   };
 
   return (
-    <div className="border border-slate-300 px-2 py-1">
+    <div className="border border-slate-300 px-2 py-2 my-2">
       <form className="" onSubmit={type === "new" ? addProduct : editProduct}>
-        <h1 className="text-xl font-medium capitalize">
+        <h1 className="form_heading">
           {type === "new" ? "new" : `edit: ${type}`}
         </h1>
 
         <div className="form-group px-4 py-2">
-          <label htmlFor="name" className="block">
+          <label htmlFor="name" className="form_label">
             Name
           </label>
           <input
@@ -65,7 +65,7 @@ function AddProductForm({ type = "new", closeForm }) {
         </div>
 
         <div className="form-group px-4 py-2">
-          <label htmlFor="description" className="block">
+          <label htmlFor="description" className="form_label">
             Description
           </label>
           <textarea
@@ -79,7 +79,7 @@ function AddProductForm({ type = "new", closeForm }) {
         </div>
 
         <div className="form-group px-4 py-2">
-          <label htmlFor="Price" className="block">
+          <label htmlFor="Price" className="form_label">
             Price
           </label>
           <input
@@ -93,7 +93,7 @@ function AddProductForm({ type = "new", closeForm }) {
         </div>
 
         <div className="form-group px-4 py-2">
-          <label htmlFor="category" className="block">
+          <label htmlFor="category" className="form_label">
             Category
           </label>
           <input
@@ -107,7 +107,7 @@ function AddProductForm({ type = "new", closeForm }) {
         </div>
 
         {/* <div className="form-group px-4 py-2">
-          <label htmlFor="file" className="block">
+          <label htmlFor="file" className="form_label">
             Product image:
           </label>
           <input
@@ -120,10 +120,7 @@ function AddProductForm({ type = "new", closeForm }) {
         </div> */}
 
         <div className="text-right mx-4">
-          <button
-            type="submit"
-            className="bg-slate-800 active:translate-y-[1px] text-white px-2 py-1"
-          >
+          <button type="submit" className="btn">
             {type === "new" ? "Add" : "Update"}
           </button>
         </div>

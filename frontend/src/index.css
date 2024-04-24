@@ -3,6 +3,157 @@
 @tailwind utilities;
 
 @layer components {
+  /* HEADER STYLING */
+
+  .header {
+    @apply flex justify-between h-[10vh] items-center sticky left-0 top-0 bg-slate-200 border-b-[1px] border-slate-400 z-10;
+  }
+
+  .header_heading {
+    @apply ml-2 text-2xl md:text-3xl font-[700];
+  }
+
+  .header_list {
+    @apply list-none flex items-center gap-2 xs:gap-4 sm:gap-6 mr-1 sm:mr-2;
+  }
+
+  /*  HOME PAGE STYLING */
+
+  .product_container {
+    @apply flex gap-x-8 gap-y-6 flex-wrap flex-row justify-around items-center w-full;
+  }
+
+  .product_card-user {
+    @apply border border-slate-300 rounded-md px-1 py-1 flex flex-col lg:gap-3 w-[25vh] xs:w-[25vh] sm:w-[30vh] md:w-[35vh] lg:w-[40vh];
+  }
+
+  .product_card-admin {
+    @apply border border-slate-300 rounded-md py-1 px-1 w-32 sm:w-[48%] md:w-[45%] flex flex-col sm:flex-row gap-1;
+  }
+
+  .product_image-user {
+    @apply w-[25vh] h-[25vh] xs:w-[25vh] sm:w-[30vh] md:w-[35vh] lg:w-[40vh] xs:h-[25vh] sm:h-[30vh] md:h-[35vh] lg:h-[40vh];
+  }
+
+  .product_image-admin {
+    @apply h-24 w-24 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32;
+  }
+
+  .product_name {
+    @apply text-base md:text-xl lg:text-2xl font-bold capitalize;
+  }
+
+  .product_desc {
+    @apply w-full text-xs md:text-base capitalize text-left;
+  }
+
+  .product_price {
+    @apply text-sm md:text-base lg:text-lg font-bold;
+  }
+
+  .product_btn {
+    @apply w-full xs:h-7 sm:h-8 md:h-9 lg:h-10 my-1 md:my-2;
+  }
+
+  /* LOGIN/REGISTER STYLING */
+
+  .login_form_container {
+    @apply flex w-full items-center justify-center h-[80vh];
+  }
+
+  .login_form {
+    @apply xs:w-[80%] sm:w-[65%] md:w-[50%] lg:w-[40%] rounded-md border-2 bg-white px-10;
+  }
+
+  /* CART PAGE STYLING */
+
+  .cart_container {
+    @apply mb-5 flex flex-col justify-center items-center;
+  }
+
+  .cart_box {
+    @apply flex flex-row justify-between items-center w-[80%];
+  }
+
+  .cart_card_container {
+    @apply flex flex-row flex-wrap gap-5 justify-center items-center sm:flex sm:flex-col sm:gap-y-5 sm:items-center w-[80%] sm:min-h-[50vh] py-2;
+  }
+
+  .cart_card {
+    @apply flex flex-col w-fit pb-10 p-1 sm:w-full sm:flex sm:flex-row sm:gap-3 sm:justify-start sm:items-center border border-slate-200 sm:px-4 sm:py-2 rounded-lg relative;
+  }
+
+  .cart_image {
+    @apply xs:h-28 xs:w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40;
+  }
+
+  .cart_info_operation_container {
+    @apply xs:w-28 sm:w-full sm:flex sm:flex-row sm:justify-between sm:items-center;
+  }
+
+  .cart_info_container {
+    @apply sm:w-[70%] h-full flex flex-col gap-1;
+  }
+
+  .cart_operation_container {
+    @apply sm:w-[30%] flex flex-row justify-center items-center sm:flex sm:flex-col md:flex-row sm:justify-center sm:items-start;
+  }
+
+  .cart_operation_btn {
+    @apply h-8 w-8 flex justify-center items-center bg-slate-800 text-white;
+  }
+
+  .cart_operation_input {
+    @apply border border-slate-500 active:translate-y-[1px] text-center h-8 w-8;
+  }
+
+  .cart_operation_btn-delete {
+    @apply h-8 w-8 flex justify-center items-center text-slate-800 bg-white border border-slate-800 my-1 md:my-0 md:mx-1;
+  }
+
+  /* PLACE ORDER PAGE STYLEING */
+
+  .place_order_box {
+    @apply lg:w-[40%] rounded-md border-2 bg-white px-10 py-5;
+  }
+
+  .place_order_subheading {
+    @apply sm:text-xl font-medium;
+  }
+
+  .place_order_prdlist {
+    @apply text-sm sm:text-base flex flex-row gap-3 my-2 border-b-[1px] border-b-slate-200 px-3;
+  }
+
+  /* ORDER PAGE STYLING */
+  .order_box {
+    @apply sm:w-[80%] md:w-[60%] rounded-md border-2 bg-white px-2 py-1 md:px-10 md:py-5;
+  }
+
+  .order_text {
+    @apply text-sm md:text-base;
+  }
+
+  /* ADMIN STYLING */
+
+  .admin_product_container {
+    @apply border flex justify-center items-center flex-row flex-wrap gap-2 md:gap-5 py-2;
+  }
+
+  .admin_operation_container {
+    @apply border flex flex-row sm:flex-col gap-2;
+  }
+
+  .admin_operation_btn {
+    @apply h-5 w-5 border border-slate-800;
+  }
+
+  .admin_order_heading {
+    @apply font-medium xs:text-base sm:text-xl md:text-2xl;
+  }
+}
+
+@layer utilities {
   .input {
     @apply w-[100%] border border-slate-200 px-4 py-1 outline-blue-200;
   }
@@ -11,7 +162,19 @@
     @apply block;
   }
 
+  .form_heading {
+    @apply my-3 text-center text-2xl sm:text-3xl font-[500] capitalize;
+  }
+
   .form-group {
     @apply my-3 flex flex-col;
+  }
+
+  .form_label {
+    @apply block text-sm sm:text-base;
+  }
+
+  .btn {
+    @apply bg-slate-800 text-white active:translate-y-[1px] px-2 py-1 text-sm md:text-base lg:text-lg;
   }
 }

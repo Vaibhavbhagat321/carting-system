@@ -14,9 +14,9 @@ function AdminProduct() {
   }, []);
 
   return (
-    <div className="w-[70vw] h-[90vh] overflow-y-scroll">
-      <h2 className="text-xl font-medium">Products</h2>
-      <div className="my-4  flex gap-x-8 gap-y-6 flex-wrap flex-col justify-around items-center">
+    <div className="w-full h-full overflow-y-scroll">
+      <h2 className="form_heading">Products</h2>
+      <div className="admin_product_container">
         {products.map((ele) => (
           <ProductCard
             product={ele}
@@ -41,7 +41,7 @@ function AdminProduct() {
         onClick={() => {
           formOpen === "" ? setFormOpen("new") : setFormOpen("");
         }}
-        className="bg-slate-800 active:translate-y-[1px] text-white py-1 px-2 my-4 float-right mx-3"
+        className="btn float-right mx-2 my-2"
       >
         {formOpen !== "" ? "Close form" : "Add product"}
       </button>

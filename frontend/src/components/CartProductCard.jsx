@@ -10,20 +10,24 @@ function CartProductCard({ cart }) {
   const total = cart.quantity * cart.product.price;
 
   return (
-    <div className="flex flex-row gap-3 justify-start items-center border border-slate-200 px-4 py-2 w-full rounded-lg h-50 relative">
+    <div className="cart_card">
       <div>
-        <img src="/product.jpg" alt={cart.product.name} className="h-46 w-40" />
+        <img
+          src="/product.jpg"
+          alt={cart.product.name}
+          className="cart_image"
+        />
       </div>
-      <div className=" w-full h-full flex flex-row justify-between items-center ">
-        <div className=" w-[80%] h-full flex flex-col gap-1">
-          <h2 className="text-xl font-bold capitalize">{cart.product.name}</h2>
-          <p className="w-full capitalize">{cart.product.description}</p>
-          <p className="w-full">{cart.quantity} item</p>
-          <h2 className="font-bold">{cart.product.price}/-</h2>
+      <div className="cart_info_operation_container">
+        <div className="cart_info_container">
+          <h2 className="product_name">{cart.product.name}</h2>
+          <p className="product_desc">{cart.product.description}</p>
+          <p className="product_desc">{cart.quantity} item</p>
+          <h2 className="product_price">{cart.product.price}/-</h2>
         </div>
-        <div className="">
+        <div className="cart_operation_container">
           <button
-            className="bg-slate-200 px-2 py-1 border border-slate-500 h-8 w-8 active:translate-y-[1px]"
+            className="cart_operation_btn"
             // onClick={() => setCount((prev) => +prev + 1)}
             onClick={() => {
               updateCartQuantity(cart._id, +count + 1);
@@ -33,7 +37,7 @@ function CartProductCard({ cart }) {
             +
           </button>
           <input
-            className="border border-slate-500 active:translate-y-[1px] w-10 text-center  h-8"
+            className="cart_operation_input"
             type="text"
             value={count}
             onChange={(e) => setCount(e.target.value)}
@@ -47,18 +51,20 @@ function CartProductCard({ cart }) {
               updateCartQuantity(cart._id, +count > 1 ? +count - 1 : 1);
               setCount((prev) => (+prev > 1 ? +prev - 1 : 1));
             }}
-            className="bg-slate-200 px-2 py-1 border border-slate-500 active:translate-y-[1px]  h-8 w-8"
+            className="cart_operation_btn"
           >
             -
           </button>
           <button
             onClick={() => deleteCart(cart._id)}
-            className="border px-2 py-1  h-8 w-8 border-slate-500 active:translate-y-[1px]"
+            className="cart_operation_btn-delete"
           >
             <HiTrash />
           </button>
         </div>
-        <div className="absolute right-2 bottom-2 font-bold">{total} /-</div>
+        <div className="absolute right-2 bottom-2 product_price">
+          {total} /-
+        </div>
       </div>
     </div>
   );
